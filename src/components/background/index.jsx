@@ -58,14 +58,14 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
           <img src={`/images/common/img_footer_bg.png`} className={'w-full h-auto '} alt="" draggable="false"/>
           <div className={'absolute bottom-0 left-0 w-full h-[95%]  flex items-center justify-center '} >
             <div className={'w-[28px]  mr-[6px] cursor-pointer'} onClick={goWeb}>
-              <img src={`/images/common/img_footer_logo.png`} className={'h-full w-auto'} alt="" draggable="false"/>
+              <img src={`/images/common/img_footer_logo.png`} className={'h-auto w-full'} alt="" draggable="false"/>
             </div>
             <div className={'cursor-pointer font-bold text-[#333333] mr-[16px] text-[14px] leading-[17px]'} onClick={goWeb}>
               www.Lottery9.com
             </div>
 
             <div className={'w-[28px]  mr-[6px] cursor-pointer'} onClick={goCustomer}>
-              <img src={`/images/common/img_footer_telegram.png`} className={'h-auto w-full  '} alt="" draggable="false"/>
+              <img src={`/images/common/img_footer_telegram.png`} className={'h-auto w-full'} alt="" draggable="false"/>
             </div>
             <div className={'cursor-pointer font-bold text-[#333333] text-[14px] leading-[17px]'} onClick={goCustomer}>
               MIKE959577
