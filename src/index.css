@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf') ;
+
+}
+button,
+input,
+optgroup,
+textarea,
+select {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: transparent;
+    color: initial;
+    outline-style: none;
+    padding-block: 0;
+    padding-inline: 0;
+}
+
+html,
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    font-family: roboto , sans-serif, serif;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+html,
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: auto;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+}
+
+html.no-scroll body {
+    overflow: hidden !important; /* 禁止页面滚动 */
+}
+html.no-scroll.min-ios14 body {
+    touch-action: none;
+    position: fixed;
+}
