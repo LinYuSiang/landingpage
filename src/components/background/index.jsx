@@ -82,9 +82,11 @@ const LangButton = () =>{
   const {language} = i18n
   const [show,setShow] = useState(false)
 
-  const changeLang = (lang) =>{
+  const changeLang = (lang, value) =>{
     i18n.changeLanguage(lang);
     sessionStorage.setItem('local',lang)
+    sessionStorage.setItem('language', value)
+    location.reload()
   }
   return(
     <div
@@ -103,21 +105,21 @@ const LangButton = () =>{
           <div
             className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
             style={{color: language === "CN" ?'#333333': '#9D9D9D'}}
-            onClick={()=>changeLang("CN")}
+            onClick={()=>changeLang("CN",'zh_CN')}
           >
             CN
           </div>
           <div
             className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
             style={{color: language === "EN" ?'#333333': '#9D9D9D'}}
-            onClick={()=>changeLang("EN")}
+            onClick={()=>changeLang("EN", 'en_US')}
           >
             EN
           </div>
           <div
              className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
              style={{color: language === "TL" ?'#333333': '#9D9D9D'}}
-             onClick={()=>changeLang("TL")}
+             onClick={()=>changeLang("TL","tl_PH")}
           >
             TL
           </div>

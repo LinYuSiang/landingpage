@@ -7,6 +7,7 @@ const apiClient = axios.create({
 // 添加請求攔截器
 apiClient.interceptors.request.use(
   (config) => {
+    config.headers['_language'] = sessionStorage.getItem('language') || 'zh_CN'; // 默認使用
     // 在發送請求之前自動添加 headers
     if (config.data instanceof FormData) {
       config.headers['Content-Type'] = 'multipart/form-data'; // 如果是 FormData，使用 multipart/form-data
