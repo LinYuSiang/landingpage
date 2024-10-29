@@ -42,9 +42,9 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
          </div>
        </div>
       </div>
-      <img src={`/images/${language}/img02.png`} className={'w-full h-auto '} alt="" draggable="false"/>
-      <img src={`/images/${language}/img03.png`} className={'w-full h-auto '} alt="" draggable="false"/>
-      <img src={`/images/${language}/img04.png`} className={'w-full h-auto '} alt="" draggable="false"/>
+      <img src={`/images/${language}/img02.png`} className={'w-full h-auto mb-[-1px]'} alt="" draggable="false"/>
+      <img src={`/images/${language}/img03.png`} className={'w-full h-auto mb-[-1px]'} alt="" draggable="false"/>
+      <img src={`/images/${language}/img04.png`} className={'w-full h-auto mb-[-1px]'} alt="" draggable="false"/>
 
       <div className={'fixed bottom-[-1px] w-full max-w-[375px]'}>
         <div className={'absolute bottom-0 translate-y-[-125px] right-[8px] w-[60px]  h-auto cursor-pointer transition-all hover:scale-105 active:scale-95'}>
