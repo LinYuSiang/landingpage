@@ -29,7 +29,7 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
   return <div className={'w-full bg-[#181B21] '}>
     <div className={'w-full  relative  max-w-[375px] mx-auto '}>
       <div className={'relative w-full'}>
-        <img src={`/images/${language}/img01.png`} className={'w-full h-auto '} alt="" draggable="false"/>
+        <img src={`/images/${language}/img01.png`} className={'w-full h-auto mb-[-1px]'} alt="" draggable="false"/>
         <LangButton/>
        <div className={'z-1 absolute w-full pb-[20%] translate-y-[-100%] overflow-hidden'}>
          <div className={'absolute bottom-0 h-full cursor-pointer transition-all hover:scale-105 active:scale-95'}
@@ -80,7 +80,12 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
 const LangButton = () =>{
   const { t, i18n } = useTranslation();
   const {language} = i18n
-  const [show,setShow] = useState(false)
+  const langList = [
+    {lang:'CN', value:'zh_CN'},
+    {lang:'EN', value:'en_US'},
+    {lang:'TL', value:'tl_PH'}
+
+  ]
 
   const changeLang = (lang, value) =>{
     i18n.changeLanguage(lang);
@@ -90,42 +95,30 @@ const LangButton = () =>{
   }
   return(
     <div
-      className={'absolute flex items-center justify-center z-1 right-[5.3%] top-[2.6%] px-[12px] py-[7px] rounded-full overflow-visible'}
-      style={{
-        background: 'linear-gradient(135deg, #FEB000, #F26221)',
-        border: '2px #FFFFFF solid',
+      className={'absolute flex gap-2 items-center justify-center z-1  right-[5.3%] top-[2.6%] '}>
+      {langList.map((e) => (
+        <div
+          className={`${language === e.lang ? ' py-[5px] px-[11px]' :' py-[6px] px-[12px]'}  rounded-full overflow-visible`}
+          style={{
+            background: language === e.lang ? 'linear-gradient(135deg, #FF724E, #FF3A9A)' : 'rgba(255, 255, 255, 0.8)',
+            border:  language === e.lang ? '2px #FFFFFF solid': '',
 
-    }}
-    onClick={()=>setShow(e=>!e)}
-    >
-      <p className={' text-[#FFFFFF] text-[12px] leading-[14.5px] mr-[14px] font-bold '}>{language}</p>
-      <img src={show?`/images/common/btn_arrow_open.png`:`/images/common/btn_arrow_close.png`} className={'h-auto  w-[12px] '} alt="" draggable="false"/>
+          }}
+        >
+          <div
+            className={'w-full text-center  font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
+            style={{ color: language === e.lang ? '#FFFFFF' : '#9D9D9D' }}
+            onClick={() => changeLang(e.lang, e.value)}
+          >
+            {e.lang}
+          </div>
 
-      <div className={'absolute bottom-[-28.4%] rounded-[14px] py-[7px] w-full  translate-y-[100%] transition-all  bg-[rgba(255,255,255,0.8)]'} style={{opacity: show? '100': '0'}}>
-          <div
-            className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
-            style={{color: language === "CN" ?'#333333': '#9D9D9D'}}
-            onClick={()=>changeLang("CN",'zh_CN')}
-          >
-            CN
-          </div>
-          <div
-            className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
-            style={{color: language === "EN" ?'#333333': '#9D9D9D'}}
-            onClick={()=>changeLang("EN", 'en_US')}
-          >
-            EN
-          </div>
-          <div
-             className={'w-full text-center py-[5px] font-bold  text-[12px] leading-[14.5px] transition-all hover:scale-105 active:scale-95 cursor-pointer'}
-             style={{color: language === "TL" ?'#333333': '#9D9D9D'}}
-             onClick={()=>changeLang("TL","tl_PH")}
-          >
-            TL
-          </div>
-      </div>
+        </div>
+      ))}
+
     </div>
+
   )
 }
 
-export {Background}
+export { Background }

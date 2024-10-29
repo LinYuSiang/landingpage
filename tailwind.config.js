@@ -17,6 +17,7 @@ export default {
         e10: 'rgba(0, 0, 0, 0.08)',
         e08:'#EFEFEE',
         e11:'#C8C8C8',
+        e12:'rgba(255, 255, 255, 0.8)',
         'b02-1':'#FF724E',
         'b02-2':'#FF3A9A',
         a19:'#FCFBFB'
