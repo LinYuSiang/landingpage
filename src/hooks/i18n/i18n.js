@@ -19,12 +19,13 @@ i18n
 
 function setLanguage() {
   const lang =  (navigator.language || navigator.browserLanguage).toLowerCase()
+  console.log(lang)
   switch (lang) {
-    case 'zh_cn':
+    case 'zh-cn':
       return "CN"
     case 'en-us':
       return "EN"
-    case 'tl_ph':
+    case 'tl-ph':
       return "TL"
     default:
       return "EN"
