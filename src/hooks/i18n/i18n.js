@@ -19,7 +19,6 @@ i18n
 
 function setLanguage() {
   const lang =  (navigator.language || navigator.browserLanguage).toLowerCase()
-  console.log(lang)
   switch (lang) {
     case 'zh-cn':
       return "CN"
