@@ -11,11 +11,25 @@ i18n
     },
     fallbackLng: "CN",
     // 預設語言
-    lng: sessionStorage.getItem('local') || "CN",
+    lng: sessionStorage.getItem('local') || setLanguage(),
     interpolation: {
       escapeValue: false,
     },
   });
+
+function setLanguage() {
+  const lang =  (navigator.language || navigator.browserLanguage).toLowerCase()
+  switch (lang) {
+    case 'zh_cn':
+      return "CN"
+    case 'en-us':
+      return "EN"
+    case 'tl_ph':
+      return "TL"
+    default:
+      return "EN"
+  }
+}
 
 // i18n範例
 // const { t, i18n } = useTranslation();
