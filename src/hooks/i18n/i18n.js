@@ -26,6 +26,8 @@ function setLanguage() {
       return "EN"
     case 'tl-ph':
       return "TL"
+    case 'fil':
+      return "TL"
     default:
       return "EN"
   }
