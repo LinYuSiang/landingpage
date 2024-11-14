@@ -12,7 +12,7 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
   }
 
   const goCustomer = () =>{
-    window.open('https://t.me/Zoe888666')
+    window.open('https://t.me/ZoeLottery9')
   }
 
   const goAppDownLoad = () =>{
@@ -68,7 +68,9 @@ const Background = ({setQrCodeVisible ,setRegisterModelVisible,appDownLoadWeb}) 
               <img src={`/images/common/img_footer_telegram.png`} className={'h-auto w-full'} alt="" draggable="false"/>
             </div>
             <div className={'cursor-pointer font-bold text-[#333333] text-[14px] leading-[17px]'} onClick={goCustomer}>
-              Zoe888666
+              ZoeLottery9
+
+
             </div>
           </div>
         </div>
