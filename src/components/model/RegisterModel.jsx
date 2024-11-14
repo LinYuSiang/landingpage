@@ -156,6 +156,9 @@ const RegisterModel = ( { close, registerModelVisible,setRegisterSuccessModalVis
             setValidRegisterStep2({ ...validRegisterStep2, headshotUrl: true })
           }
           console.log(':', response.data);
+        } else {
+          alert(response.message);
+
         }
 
 
