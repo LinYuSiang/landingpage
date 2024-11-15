@@ -127,17 +127,7 @@ const RegisterModel = ( { close, registerModelVisible,setRegisterSuccessModalVis
       return;
     }
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        if (pic === 'frontendID') {
-          setFrontendIDImage(reader.result); // 將圖片設置到狀態中
-        } else if (pic === 'backendID') {
-          setBackendIDImage(reader.result); // 將圖片設置到狀態中
-        } else if (pic === 'headshot') {
-          setHeadshotmage(reader.result)
-        }
-      };
-      reader.readAsDataURL(file); // 讀取文件並將其轉換為數據 URL
+
 
       const formData = new FormData();
       formData.append('file', file); // 將文件添加到 FormData 中
@@ -145,6 +135,18 @@ const RegisterModel = ( { close, registerModelVisible,setRegisterSuccessModalVis
         const response = await apiRequest('post', `/api/user/file/upload.html?objId=objId&catePath=anchorManagement`, formData);
 
         if (response.success) {
+          const reader = new FileReader();
+
+          reader.readAsDataURL(file); // 讀取文件並將其轉換為數據 URL
+          reader.onloadend = () => {
+            if (pic === 'frontendID') {
+              setFrontendIDImage(reader.result); // 將圖片設置到狀態中
+            } else if (pic === 'backendID') {
+              setBackendIDImage(reader.result); // 將圖片設置到狀態中
+            } else if (pic === 'headshot') {
+              setHeadshotmage(reader.result)
+            }
+          };
           if (pic === 'frontendID') {
             setRegisterInfo({ ...registerInfo, frontIDUrl: response.model })
             setValidRegisterStep2({ ...validRegisterStep2, frontIDUrl: true })
